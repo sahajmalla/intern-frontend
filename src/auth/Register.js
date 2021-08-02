@@ -15,27 +15,27 @@ const Register = () => {
                             <div className="md:grid grid-cols-2 gap-4">
                                 <div className="mb-6 pt-3">
                                     <label className="block text-gray-700 text-sm font-bold mb-2 ml-3" htmlFor="firstName">First Name</label>
-                                    <input type="text" id="firstName" name="firstName" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3 h-12" />
+                                    <input type="text" id="firstName" name="firstName" className="border border-gray-300 rounded w-full text-gray-700 focus:outline-none focus:border-purple-600 transition duration-500 px-3 pb-3 h-12" />
                                 </div>
 
                                 <div className="mb-6 pt-3">
                                     <label className="block text-gray-700 text-sm font-bold mb-2 ml-3" htmlFor="lastName">Last Name</label>
-                                    <input type="text" id="lastName" name="lastName" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3 h-12" />
+                                    <input type="text" id="lastName" name="lastName" className="border border-gray-300 rounded w-full text-gray-700 focus:outline-none focus:border-purple-600 transition duration-500 px-3 pb-3 h-12" />
                                 </div>
 
                                 <div className="mb-6 pt-3">
                                     <label className="block text-gray-700 text-sm font-bold mb-2 ml-3" htmlFor="email">Email</label>
-                                    <input type="email" id="email" name="email" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3 h-12" />
+                                    <input type="email" id="email" name="email" className="border border-gray-300 rounded w-full text-gray-700 focus:outline-none focus:border-purple-600 transition duration-500 px-3 pb-3 h-12" />
                                 </div>
 
                                 <div className="mb-6 pt-3">
                                     <label className="block text-gray-700 text-sm font-bold mb-2 ml-3" htmlFor="password">Password</label>
-                                    <input type="password" id="password" name="password" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3 h-12" />
+                                    <input type="password" id="password" name="password" className="border border-gray-300 rounded w-full text-gray-700 focus:outline-none focus:border-purple-600 transition duration-500 px-3 pb-3 h-12" />
                                 </div>
 
                                 <div className="mb-6 pt-3">
                                     <label className="block text-gray-700 text-sm font-bold mb-2 ml-3" htmlFor="password_confirmation">Confirm Password</label>
-                                    <input type="password" id="password_confirmation" name="password_confirmation" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3 h-12" />
+                                    <input type="password" id="password_confirmation" name="password_confirmation" className="border border-gray-300 rounded w-full text-gray-700 focus:outline-none focus:border-purple-600 transition duration-500 px-3 pb-3 h-12" />
                                 </div>
                             </div>
                             <div className="flex justify-end">
