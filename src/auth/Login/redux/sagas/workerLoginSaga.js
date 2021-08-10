@@ -5,7 +5,7 @@ import { LOGIN_SUCCESS, LOGIN_FAILED } from "../../../../root-redux/actions/type
 function* handlePostLogin(action) {
     try {
         const response = yield call(sendLoginCredentials, action.data)
-        yield localStorage.setItem('token', response.data.token)
+        yield localStorage.setItem('token', response.data.access_token)
         yield put({ type: LOGIN_SUCCESS, response })
     } catch (error) {
         yield put({ type: LOGIN_FAILED, error })
