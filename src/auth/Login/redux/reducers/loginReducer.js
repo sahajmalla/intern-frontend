@@ -12,7 +12,7 @@ const loginState = (state = initialState, action) => {
     switch (action.type) {
         case TRY_LOGIN: return { ...state, loading: true };
         case LOGIN_SUCCESS: return { ...state, loading: false ,redirect: true, response };
-        case LOGIN_FAILED: return { ...state, loading: false ,redirect: false,error: action.error.message };
+        case LOGIN_FAILED: return { ...state, loading: false ,redirect: false, error: action.error.data };
         default: return state;
     }
 }
