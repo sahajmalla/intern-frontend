@@ -31,7 +31,7 @@ const Register = () => {
 
                     <div className="mt-10">
                         <form className="flex flex-col" onSubmit={handleSubmit(onSubmit)}>
-                            <div className="md:grid grid-cols-2 gap-4">
+                            <div>
 
                                 <div className="mb-6 pt-3">
 
