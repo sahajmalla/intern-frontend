@@ -8,7 +8,7 @@ const reducers = combineReducers({
     loginState,
     registerState,
     forgotPwState,
-    resetPWState
+    resetPWState,
 })
 
 export default reducers
