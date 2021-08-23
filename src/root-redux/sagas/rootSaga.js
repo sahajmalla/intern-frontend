@@ -3,6 +3,7 @@ import watcherForgotPWSaga from "../../auth/Forgot-Password/redux/sagas/watcherF
 import watcherLoginSaga from "../../auth/Login/redux/sagas/watcherLoginSaga";
 import watcherRegisterSaga from "../../auth/Register/redux/sagas/watcherRegisterSaga";
 import watcherResetPWSaga from "../../auth/Reset-Password/redux/sagas/watcherResetPWSaga";
+import { watcherCategorySaga } from "../../Product-Category/redux/sagas/watcherCategorySaga";
 
 export default function* rootSaga(){
     yield all([
@@ -10,5 +11,6 @@ export default function* rootSaga(){
         watcherRegisterSaga(),
         watcherForgotPWSaga(),
         watcherResetPWSaga(),
+        watcherCategorySaga(),
     ])
 }

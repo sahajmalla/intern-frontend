@@ -16,10 +16,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Switch>
-          {/* <PrivateRoute exact path={'/dashboard'} component={DashBoard} /> */}
-          
+          <PrivateRoute path={'/dashboard'} component={DashBoard} />
           <Route exact path={'/'} component={Home} />
-          <Route path={'/dashboard'} component={DashBoard} />
           <BlockedLoggedInRoute exact path={'/login'} component={Login} />
           <BlockedLoggedInRoute exact path={'/register'} component={Register} />
           <Route exact path={'/forgot-password'} component={ForgotPassword} />
