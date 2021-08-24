@@ -1,12 +1,12 @@
 import { call, put } from "redux-saga/effects"
-import { ADD_CATEGORY_FAILED, GET_CATEGORY_SUCCESS } from "../../../root-redux/actions/type"
+import { ADD_CATEGORY_FAILED, ADD_CATEGORY_SUCCESS } from "../../../root-redux/actions/type"
 import { addCategoryAPI } from "../../api/addCategoryAPI"
 
 export function* addCategorySaga(action){
     try {
         
         const response = yield call(addCategoryAPI, action.data)
-        yield put({type: GET_CATEGORY_SUCCESS, response})
+        yield put({type: ADD_CATEGORY_SUCCESS, response})
 
     } catch (error) {
         // The request was made and the server responded with a status code

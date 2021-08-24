@@ -6,6 +6,7 @@ import resetPWState from "../../auth/Reset-Password/redux/reducers/resetPassword
 import AddCategoryFormReducers from "../../Product-Category/redux/reducers/AddCategoryFormReducers";
 import { EditCategoryFormReducers } from "../../Product-Category/redux/reducers/EditCategoryFormReducers";
 import { categoryState } from "../../Product-Category/redux/reducers/CategoryReducers";
+import ShowHideSearchBarState from "../../Home-page/Components/Search/Redux/Reducers/ShowHIdeSearchBarReducer";
 
 const reducers = combineReducers({
     loginState,
@@ -14,7 +15,8 @@ const reducers = combineReducers({
     resetPWState,
     AddCategoryFormReducers,
     categoryState,
-    EditCategoryFormReducers
+    EditCategoryFormReducers,
+    ShowHideSearchBarState
 })
 
 export default reducers

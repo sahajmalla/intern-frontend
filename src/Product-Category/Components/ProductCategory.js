@@ -8,6 +8,7 @@ import { tryDeleteCategory } from '../redux/action/DeleteCategoryAction';
 import { useHistory } from 'react-router-dom';
 import EditCategoryForm from './EditCategoryForm';
 import { showEditForm } from '../redux/action/EditCategoryFormActions';
+import { baseURL } from '../../utils/baseUrl';
 
 const ProductCategory = () => {
 
@@ -25,7 +26,7 @@ const ProductCategory = () => {
     return (
 
         <div>
-            {reload && history.go(0)}
+            {(categories && reload) && history.go(0)}
 
             <div className="container mx-auto px-4 sm:px-8 max-w-3xl">
                 <div className="py-8">
@@ -101,7 +102,7 @@ const ProductCategory = () => {
                                     <tr key={category.id}>
                                         <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                             <div className="flex items-center">
-                                                <img className="object-cover w-28 h-28 mr-2" src="https://images.pexels.com/photos/2589653/pexels-photo-2589653.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Profile image" />
+                                                <img className="object-cover w-28 h-28 mr-2" src={`${baseURL}/${category.category_image}`} alt="category image" />
 
                                             </div>
                                         </td>

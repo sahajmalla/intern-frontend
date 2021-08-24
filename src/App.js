@@ -6,8 +6,7 @@ import DashBoard from './DashBoard/Components/DashBoard';
 import { BlockedLoggedInRoute } from './custom-route/Components/BlockedLoggedInRoute';
 import ForgotPassword from './auth/Forgot-Password/Components/ForgotPassword';
 import ResetPassword from './auth/Reset-Password/Components/ResetPassword';
-import Home from './Home-page/Components/Home';
-import addProductForm from './product/Add-Product-Form/Components/addProductForm';
+import Home from './Home-page/Components/Home-page/Home';
 
 
 
