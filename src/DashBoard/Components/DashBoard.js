@@ -2,30 +2,39 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ProductCategory from "../../Product-Category/Components/ProductCategory";
 import addProductForm from "../../product/Add-Product-Form/Components/addProductForm";
-import Navbar from "../../shared-components/Dashboard-Navbar/Components/DashboardNavbar";
-import Sidebar from "../../shared-components/Dashboard-Sidebar/Components/DashboardSidebar";
+import PendingProducts from "../../product/Pending-Products/Components/PendingProducts";
+import DashboardHeader from "./Dashboard-header/DashboardHeader";
+import DashboardSidebar from "./Dashboard-Sidebar/DashboardSidebar";
 
 export default function Dashboard() {
     return (
         <>
-            <Sidebar />
-            <div className="relative md:ml-64 bg-blueGray-100">
-                <Navbar />
-                {/* Header */}
-                <div className="relative bg-blue-500 md:pt-32 pb-2 pt-12">
-                    <div className="px-4 md:px-10 mx-auto w-full">
 
-                    </div>
-                </div>
-                <div className="pt-8">
+            <div className="bg-gray-100 dark:bg-gray-800 h-screen overflow-hidden relative">
+                <div className="flex items-start justify-between">
 
-                    <div className="">
-                        <Switch>
-                            <Route exact path={'/dashboard/add-product-form'} component={addProductForm} />
-                            <Route exact path={'/dashboard/product-category'} component={ProductCategory} />
-                        </Switch>
+                    {/* sidebar */}
+                    <div>
+                        <DashboardSidebar />
                     </div>
 
+                    <div className="flex flex-col w-full md:space-y-4">
+
+                        {/* header */}
+                        <div>
+                            <DashboardHeader />
+                        </div>
+
+                        {/* main */}
+                        <div className="overflow-auto h-screen pb-24 px-4 md:px-6">
+                            <Switch>
+                                <Route exact path={'/dashboard/add-product-form'} component={addProductForm} />
+                                <Route exact path={'/dashboard/product-category'} component={ProductCategory} />
+                                <Route exact path={'/dashboard/pending-products'} component={PendingProducts} />
+                            </Switch>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </>
