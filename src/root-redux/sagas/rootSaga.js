@@ -4,6 +4,9 @@ import watcherLoginSaga from "../../auth/Login/redux/sagas/watcherLoginSaga";
 import watcherRegisterSaga from "../../auth/Register/redux/sagas/watcherRegisterSaga";
 import watcherResetPWSaga from "../../auth/Reset-Password/redux/sagas/watcherResetPWSaga";
 import { watcherCategorySaga } from "../../Product-Category/redux/sagas/watcherCategorySaga";
+import watcherGetVerifiedProducts from "../../product/Pending-Products/redux/sagas/watcherGetVerifiedProducts";
+import watcherPendingProductSaga from "../../product/Pending-Products/redux/sagas/watcherPendingProductSaga";
+import watcherPostAddProdToCat from "../../product/Pending-Products/redux/sagas/watcherPostAddProdToCatSaga";
 
 export default function* rootSaga(){
     yield all([
@@ -12,5 +15,8 @@ export default function* rootSaga(){
         watcherForgotPWSaga(),
         watcherResetPWSaga(),
         watcherCategorySaga(),
+        watcherPendingProductSaga(),
+        watcherPostAddProdToCat(),
+        watcherGetVerifiedProducts()
     ])
 }

@@ -7,6 +7,8 @@ import { BlockedLoggedInRoute } from './custom-route/Components/BlockedLoggedInR
 import ForgotPassword from './auth/Forgot-Password/Components/ForgotPassword';
 import ResetPassword from './auth/Reset-Password/Components/ResetPassword';
 import Home from './Home-page/Components/Home-page/Home';
+import BecomeASeller from './Become-A-Seller/Components/BecomeASeller';
+import testtt from './testt/testtt';
 
 
 
@@ -15,12 +17,14 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Switch>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/become-a-seller' component={BecomeASeller} />
           <PrivateRoute path={'/dashboard'} component={DashBoard} />
-          <Route exact path={'/'} component={Home} />
           <BlockedLoggedInRoute exact path={'/login'} component={Login} />
           <BlockedLoggedInRoute exact path={'/register'} component={Register} />
           <Route exact path={'/forgot-password'} component={ForgotPassword} />
           <Route exact path={'/reset-password'} component={ResetPassword} />
+          <Route exact path={'/tesst/?code=/:id'} component={testtt} />
         </Switch>
       </BrowserRouter>
     </div>

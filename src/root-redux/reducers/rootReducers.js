@@ -7,6 +7,10 @@ import AddCategoryFormReducers from "../../Product-Category/redux/reducers/AddCa
 import { EditCategoryFormReducers } from "../../Product-Category/redux/reducers/EditCategoryFormReducers";
 import { categoryState } from "../../Product-Category/redux/reducers/CategoryReducers";
 import ShowHideSearchBarState from "../../Home-page/Components/Search/Redux/Reducers/ShowHIdeSearchBarReducer";
+import instagramState from "../../product/Pending-Products/redux/reducers/instagramState";
+import AddProductToCategoryReducers from "../../product/Pending-Products/redux/reducers/AddProductToCategoryReducers";
+import PostAddProdToCatState from "../../product/Pending-Products/redux/reducers/PostAddProdToCatState";
+import GetVerifiedProductReducers from "../../product/Pending-Products/redux/reducers/GetVerifiedProductReducers";
 
 const reducers = combineReducers({
     loginState,
@@ -16,7 +20,11 @@ const reducers = combineReducers({
     AddCategoryFormReducers,
     categoryState,
     EditCategoryFormReducers,
-    ShowHideSearchBarState
+    ShowHideSearchBarState,
+    instagramState,
+    AddProductToCategoryReducers,
+    PostAddProdToCatState,
+    GetVerifiedProductReducers,
 })
 
 export default reducers
