@@ -7,6 +7,7 @@ const Testtt = () => {
     }
     return (
         <button onClick={join}>
+            adadd
         </button>
     )
 }
