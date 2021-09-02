@@ -1,10 +1,12 @@
+import { useParams } from "react-router-dom"
+
 const testtt = () => {
+    const {id} = useParams();
     const join =()=>{
-        alert('joined')
+        alert(id)
     }
     return (
         <button onClick={join}>
-            join
         </button>
     )
 }
