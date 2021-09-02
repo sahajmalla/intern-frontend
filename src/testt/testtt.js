@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
 
-const testtt = () => {
+const Testtt = () => {
     const {id} = useParams();
     const join =()=>{
         alert(id)
@@ -11,4 +11,4 @@ const testtt = () => {
     )
 }
 
-export default testtt
+export default Testtt
