@@ -24,7 +24,7 @@ function App() {
           <BlockedLoggedInRoute exact path={'/register'} component={Register} />
           <Route exact path={'/forgot-password'} component={ForgotPassword} />
           <Route exact path={'/reset-password'} component={ResetPassword} />
-          <Route exact path={'/tesst/'} component={Testt} />
+          <Route exact path={'/tesst/:id/'} component={Testt} />
         </Switch>
       </BrowserRouter>
     </div>
