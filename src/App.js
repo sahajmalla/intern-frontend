@@ -8,7 +8,7 @@ import ForgotPassword from './auth/Forgot-Password/Components/ForgotPassword';
 import ResetPassword from './auth/Reset-Password/Components/ResetPassword';
 import Home from './Home-page/Components/Home-page/Home';
 import BecomeASeller from './Become-A-Seller/Components/BecomeASeller';
-import Testt from "./testt/Testt"
+import ReceivedCode from './product/Pending-Products/Components/ReceivedCode';
 
 
 
@@ -24,7 +24,7 @@ function App() {
           <BlockedLoggedInRoute exact path={'/register'} component={Register} />
           <Route exact path={'/forgot-password'} component={ForgotPassword} />
           <Route exact path={'/reset-password'} component={ResetPassword} />
-          <Route exact path={'/tesst/:id/'} component={Testt} />
+          <Route exact path={'/received-code'} component={ReceivedCode} />
         </Switch>
       </BrowserRouter>
     </div>

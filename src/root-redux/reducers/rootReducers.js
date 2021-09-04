@@ -11,6 +11,7 @@ import instagramState from "../../product/Pending-Products/redux/reducers/instag
 import AddProductToCategoryReducers from "../../product/Pending-Products/redux/reducers/AddProductToCategoryReducers";
 import PostAddProdToCatState from "../../product/Pending-Products/redux/reducers/PostAddProdToCatState";
 import GetVerifiedProductReducers from "../../product/Pending-Products/redux/reducers/GetVerifiedProductReducers";
+import ShowHideVerifiedProdEditFormReducers from "../../product/Pending-Products/redux/reducers/ShowHideVerifiedProdEditFormReducers";
 
 const reducers = combineReducers({
     loginState,
@@ -25,6 +26,7 @@ const reducers = combineReducers({
     AddProductToCategoryReducers,
     PostAddProdToCatState,
     GetVerifiedProductReducers,
+    ShowHideVerifiedProdEditFormReducers,
 })
 
 export default reducers
