@@ -1,19 +1,49 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import getItemWithExpiry from '../../../utils/getLocalStorageItemsWithExpiry'
 import { showAddProductToCategoryForm } from '../redux/actions/AddProductToCategoryFormActions'
-import { GetCodeForInstaAccesToken } from '../redux/actions/PendingProductActions'
+import { GetUserPostIdCaptionsAction } from '../redux/actions/PendingProductActions'
 import AddProductToCategoryForm from './AddProductToCategoryForm'
 
 
 const PendingProducts = () => {
     const userPosts = useSelector(state => state.instagramState.postsResponse)
     const isAddProdToCategoryFormShown = useSelector(state => state.AddProductToCategoryReducers.show)
-
     const dispatch = useDispatch()
 
+
     useEffect(() => {
-        dispatch(GetCodeForInstaAccesToken())
+
+        if (getItemWithExpiry('Insta Access token')) {
+            const accessToken = getItemWithExpiry('Insta Access token')
+            dispatch(GetUserPostIdCaptionsAction(accessToken));
+        }
+
     }, [])
+
+
+
+
+    if (!(getItemWithExpiry('Insta Access token'))) return (
+        <div className="container mx-auto px-6 md:px-12 relative z-10 flex items-center py-32 xl:py-40">
+            <div className="w-full font-mono flex flex-col items-center relative z-10">
+                <h1 className="font-extrabold text-3xl text-center text-gray-500 leading-tight mt-4">
+                    Send Email for access to the pending posts.
+                </h1>
+            </div>
+        </div>
+
+    )
+
+    if ((userPosts) && (userPosts.length === 0)) return (
+        <div className="container mx-auto px-6 md:px-12 relative z-10 flex items-center py-32 xl:py-40">
+            <div className="w-full font-mono flex flex-col items-center relative z-10">
+                <h1 className="font-extrabold text-3xl text-center text-gray-500 leading-tight mt-4">
+                    All posts has been verified.
+                </h1>
+            </div>
+        </div>
+    )
 
 
     return (
@@ -25,30 +55,6 @@ const PendingProducts = () => {
                 </>
             )}
 
-
-            <div className="flex items-center py-4">
-                <div>
-                    <h1 className="p-5 text-3xl font-bold">Pending Items</h1>
-                </div>
-
-            </div>
-
-            {/* <div className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
-                {userPosts && userPosts.map((posts, index) =>
-
-                    <div key={posts.data.id} className="rounded overflow-hidden shadow-lg">
-                        <img className="w-full" src={posts.data.media_url} alt="post picture" />
-                        <div className="px-6 py-4 flex justify-end">
-
-                            <button
-                                onClick={() => { dispatch(showAddProductToCategoryForm(index)) }}
-                                className="px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-green-600 rounded-md dark:bg-gray-800 hover:bg-green-500 dark:hover:bg-gray-700 focus:outline-none focus:bg-green-500 dark:focus:bg-gray-700">
-                                Add Category
-                            </button>
-                        </div>
-                    </div>
-                )}
-            </div> */}
 
 
             <div className="container mx-auto px-4 sm:px-8 max-w-3xl">
@@ -67,7 +73,9 @@ const PendingProducts = () => {
 
                                     </tr>
                                 </thead>
+
                                 <tbody>
+
                                     {userPosts && userPosts.map((posts, index) =>
                                         <tr key={posts.data.id}>
                                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
@@ -93,6 +101,7 @@ const PendingProducts = () => {
 
 
                                 </tbody>
+
                             </table>
 
                         </div>

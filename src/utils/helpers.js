@@ -1,3 +1,5 @@
+import getItemWithExpiry from "./getLocalStorageItemsWithExpiry"
+
 export const isLogin = () => {
-    return (localStorage.getItem('token')) ? true : false
+    return (getItemWithExpiry('token'))? true : false
 }

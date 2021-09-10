@@ -1,17 +1,16 @@
-import { useEffect } from "react"
 import { useLocation } from "react-router"
-import { useDispatch } from "react-redux";
+import { useEffect } from "react"
+import { useDispatch } from 'react-redux'
 import { GetCodeForInstaAccesToken } from "../redux/actions/PendingProductActions";
+import setItemWithExpiry from "../../../utils/setLocalStarageItemsWithExpiry";
 
 const ReceivedCode = () => {
 
-
-
-    const dispatch = useDispatch();
+    const dispatch = useDispatch()
 
     let query = new URLSearchParams(useLocation().search);
     let code = query.get("code");
-
+   
     useEffect(() => {
         if (code) {
             dispatch(GetCodeForInstaAccesToken(code))

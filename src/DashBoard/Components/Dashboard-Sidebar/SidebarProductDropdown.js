@@ -8,7 +8,7 @@ const SidebarProductDropdown = () => {
     return (
 
         <div>
-            <div className="w-full text-gray-800 flex items-center pl-6 p-2 my-2 transition-colors duration-200 justify-start hover:text-gray-800 border-l-4 border-transparent" >
+            <div className="relative w-full text-gray-800 flex items-center pl-6 p-2 my-2 transition-colors duration-200 justify-start hover:text-gray-800 border-l-4 border-transparent" >
 
                 <span className="text-left">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -16,10 +16,10 @@ const SidebarProductDropdown = () => {
                     </svg>
                 </span>
 
-                <button onClick={() => setShowProductSubMenu(!ShowProductSubMenu)} className="mx-2 text-sm font-normal flex gap-x-32 ">
+                <button onClick={() => setShowProductSubMenu(!ShowProductSubMenu)} className="mx-2 w-full text-sm text-left font-normal ">
                     <span className="">Products</span>
 
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 absolute right-4 top-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
 

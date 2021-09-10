@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import SellersDropdown from "./SellersDropdown"
 import SidebarProductDropdown from "./SidebarProductDropdown"
 
 const DashboardSidebar = () => {
@@ -30,6 +31,10 @@ const DashboardSidebar = () => {
 
                         <>
                             <SidebarProductDropdown />
+                        </>
+
+                        <>
+                            <SellersDropdown />
                         </>
 
                     </div>

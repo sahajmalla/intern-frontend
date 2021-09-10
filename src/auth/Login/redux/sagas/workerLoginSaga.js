@@ -1,13 +1,14 @@
 import { call, put } from "@redux-saga/core/effects"
 import sendLoginCredentials from "../../api/loginAPI"
 import { LOGIN_SUCCESS, LOGIN_FAILED } from "../../../../root-redux/actions/type"
+import setItemWithExpiry from "../../../../utils/setLocalStarageItemsWithExpiry"
 
 function* handlePostLogin(action) {
     try {
 
         const response = yield call(sendLoginCredentials, action.data)
 
-        yield localStorage.setItem('token', response.data.access_token)
+        yield setItemWithExpiry('token', response.data.access_token, response.data.expires_in)
 
         yield put({ type: LOGIN_SUCCESS, response })
 

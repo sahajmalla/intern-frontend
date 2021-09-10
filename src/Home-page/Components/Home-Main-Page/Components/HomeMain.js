@@ -1,18 +1,24 @@
 import HomeCategories from "../../Home-page/Categories/Components/HomeCategories"
+import HomeProducts from "../../Home-page/Products/Components/HomeProducts"
 
 const HomeMain = () => {
     return (
-        <div>
+        <div className="">
             {/* ad banner */}
-            <div className=" w-full h-24 shadow-lg">
+            {/* <div className=" w-full h-24 shadow-lg">
                 ad banner
-            </div>
+            </div> */}
 
             {/* categories */}
-            <div className="w-full h-auto mt-6 shadow-lg text-gray-700">
-                <span className="font-semibold text-xl p-6">Our Categories</span>
+            <div className="w-full h-auto mt-6 text-gray-700">
                 <HomeCategories />
             </div>
+            
+            {/* products */}
+            <div className="w-full h-auto mt-6 text-gray-700">
+                <HomeProducts />
+            </div>
+
         </div>
     )
 }

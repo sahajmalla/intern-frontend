@@ -5,7 +5,7 @@ import GetSpecificUserPostAPI from "../../api/GetSpecificUserPostAPI";
 
 function* GetSpecificUserPostWorker(action) {
     try {
-        const response = yield all(action.usersPostsData.map(post => call(GetSpecificUserPostAPI, post.id, action.access_token)));
+        const response = yield all(action.userPostsData.map(post => call(GetSpecificUserPostAPI, post.id, action.accessToken)));
         yield put({ type: GET_SPECIFIC_USER_POST_SUCCESS, response })
     } catch (error) {
 
