@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom"
+import { Link, Redirect } from "react-router-dom"
 import { useForm } from 'react-hook-form'
 import '../../styles/Auth.css'
-import { useDispatch,useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import registerAction from "../redux/action/registerAction"
 import AuthButton from "../../../shared-components/auth-form-buttons/AuthButton";
 import { emailRegex } from "../../../utils/emailRegex";
@@ -10,12 +10,15 @@ import ShowErrorAlert from "../../../shared-components/Alert/ErrorAlert";
 const Register = () => {
     const { register, handleSubmit, formState: { errors }, watch } = useForm();
     const registerErrorMessage = useSelector((state) => state.registerState.error)
+    const canRedirect = useSelector(state => state.registerState.redirect)
 
     const dispatch = useDispatch()
 
     const onSubmit = (data) => {
         dispatch(registerAction(data));
     };
+
+    if (canRedirect) return <Redirect to={'/login'} />
 
     return (
         <div>
