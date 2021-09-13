@@ -4,9 +4,11 @@ import Header from "../../Home-page/Components/Header/Header"
 import { emailRegex } from "../../utils/emailRegex"
 import { useDispatch } from "react-redux"
 import BecomeASellerActions from "../redux/actions/BecomeASellerActions"
+import { useSelector } from "react-redux"
 
 const BecomeASeller = () => {
 
+    const isSuccess = useSelector(state => state.BecomeASellerReducers.success)
     const dispatch = useDispatch()
     const { register, handleSubmit, formState: { errors } } = useForm()
 
@@ -33,6 +35,7 @@ const BecomeASeller = () => {
                         <Header />
 
                         <main className="mt-10 mx-auto px-4 sm:mt-12 sm:px-6 md:mt-6 lg:mt-6 lg:px-8 xl:mt-8 h-full">
+
                             <div className="space-y-8 lg:flex lg:space-x-10">
                                 <div className="lg:pt-32">
                                     <h1 className="title-font font-medium text-3xl text-gray-900">Become A Seller at our Platform</h1>
@@ -41,6 +44,21 @@ const BecomeASeller = () => {
                                 </div>
 
                                 <div>
+
+                                    {isSuccess && (
+                                        <div class="flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800 mb-5">
+
+                                            <div class="px-4 py-2 -mx-3">
+                                                <div class="mx-3">
+                                                    <span class="font-semibold text-green-500 dark:text-green-400">Success</span>
+                                                    <p class="text-sm text-gray-600 dark:text-gray-200">Your details has been forwared to the admin, please wait unit we verify you. You will soon be getting an email to verify our app in your instagram.</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    )}
+
+
                                     <section className="bg-gray-100 max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800">
                                         <h2 className="text-lg font-semibold text-gray-700 capitalize dark:text-white">Become a Seller</h2>
                                         <p className="text-xs text-gray-500 mt-3">Literally the best platform for your Instagram Store against your competitors.</p>
