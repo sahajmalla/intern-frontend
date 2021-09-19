@@ -9,7 +9,7 @@ const EditCategoryForm = () => {
     const dispatch = useDispatch()
 
     const toEditCategoryID = useSelector(state => state.EditCategoryFormReducers.id)
-    const loading = useSelector((state) => state.categoryState.loading)
+    const loading = useSelector((state) => state.categoryState.editLoading)
     const editCategoryErrorMessage = useSelector((state) => state.categoryState.editCategoryError)
     const categories = useSelector((state => state.categoryState.category))
     const toEditTableIndex = useSelector(state => state.EditCategoryFormReducers.index)

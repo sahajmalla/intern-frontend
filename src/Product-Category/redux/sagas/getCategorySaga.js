@@ -4,7 +4,6 @@ import { getCategoryAPI } from "../../api/getCategoryAPI";
 export function* getCategorySaga(){
     try {
         const response = yield call(getCategoryAPI);
-        console.log(response);
         yield put({type: GET_CATEGORY_SUCCESS, response });
 
     } catch (error) {

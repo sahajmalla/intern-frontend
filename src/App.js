@@ -10,6 +10,7 @@ import Home from './Home-page/Components/Home-page/Home';
 import BecomeASeller from './Become-A-Seller/Components/BecomeASeller';
 import ReceivedCode from './product/Pending-Products/Components/ReceivedCode';
 import Product from './product/Show-Product-Details/Product';
+import SearchProductResults from './Search-Product-Results/Components/SearchProductResults';
 
 
 
@@ -26,6 +27,7 @@ function App() {
           <Route exact path={'/reset-password'} component={ResetPassword} />
           <Route exact path={'/received-code'} component={ReceivedCode} />
           <Route exact path={'/product/:id/:name'} component={Product} />
+          <Route exact path={'/search-product'} component={SearchProductResults} />
         
       </BrowserRouter>
     </div>

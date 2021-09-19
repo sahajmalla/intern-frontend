@@ -13,6 +13,11 @@ import PostAddProdToCatState from "../../product/Pending-Products/redux/reducers
 import GetVerifiedProductReducers from "../../product/Pending-Products/redux/reducers/GetVerifiedProductReducers";
 import ShowHideVerifiedProdEditFormReducers from "../../product/Pending-Products/redux/reducers/ShowHideVerifiedProdEditFormReducers";
 import BecomeASellerReducers from "../../Become-A-Seller/redux/reducers/BecomeASellerReducers";
+import getRequestedSellerReducers from "../../Sellers/Redux/Reducers/getRequestedSellerReducers";
+import editSellerReducers from "../../Sellers/Redux/Reducers/editSellerReducers";
+import getVerifiedSellerReducers from "../../Sellers/Redux/Reducers/getVerifiedSellerReducers";
+import SendEmailReducers from "../../Sellers/Redux/Reducers/SendEmailReducers";
+import searchProductReducers from "../../Home-page/Components/Search/Redux/Reducers/searchProductReducers";
 
 const reducers = combineReducers({
     loginState,
@@ -29,6 +34,11 @@ const reducers = combineReducers({
     GetVerifiedProductReducers,
     ShowHideVerifiedProdEditFormReducers,
     BecomeASellerReducers,
+    getRequestedSellerReducers,
+    editSellerReducers,
+    getVerifiedSellerReducers,
+    SendEmailReducers,
+    searchProductReducers,
 })
 
 export default reducers

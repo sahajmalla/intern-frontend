@@ -2,7 +2,10 @@ import { ADD_CATEGORY, ADD_CATEGORY_FAILED, ADD_CATEGORY_SUCCESS, DELETE_CATEGOR
 
 const initialState = {
     category: [],
-    loading: false,
+    getLoading:false,
+    addLoading: false,
+    editLoading:false,
+    deleteLoading: false,
     addCategoryError: null,
     getCategoryError: null,
     editCategoryError: null,
@@ -19,7 +22,7 @@ export const categoryState = (state = initialState, action) => {
         case GET_CATEGORY:
             return {
                 ...state,
-                loading: true,
+                getLoading: true,
                 reload: false,
 
             }
@@ -27,7 +30,7 @@ export const categoryState = (state = initialState, action) => {
         case GET_CATEGORY_SUCCESS:
             return {
                 ...state,
-                loading: false,
+                getLoading: false,
                 category: action.response.data,
                 reload: false,
             }
@@ -35,7 +38,7 @@ export const categoryState = (state = initialState, action) => {
         case GET_CATEGORY_FAILED:
             return {
                 ...state,
-                loading: false,
+                getLoading: false,
                 getCategoryError: action.error,
                 reload: false,
             }
@@ -45,7 +48,7 @@ export const categoryState = (state = initialState, action) => {
                 ...state,
                 addCategoryError: null,
                 addCategorySuccess: null,
-                loading: true,
+                addLoading: true,
                 reload: false,
                 
             }
@@ -53,7 +56,7 @@ export const categoryState = (state = initialState, action) => {
         case ADD_CATEGORY_SUCCESS:
             return {
                 ...state,
-                loading: false,
+                addLoading: false,
                 addCategoryError: null,
                 addCategorySuccess: action.response,
                 reload: true,
@@ -62,7 +65,7 @@ export const categoryState = (state = initialState, action) => {
         case ADD_CATEGORY_FAILED:
             return {
                 ...state,
-                loading: false,
+                addLoading: false,
                 addCategoryError: action.error.data.message,
                 addCategorySuccess: null,
                 reload: false,
@@ -71,13 +74,13 @@ export const categoryState = (state = initialState, action) => {
         case DELETE_CATEGORY:
             return {
                 ...state,
-                loading: true,
+                deleteLoading: true,
                 reload: false,
             }
         case DELETE_CATEGORY_SUCCESS:
             return {
                 ...state,
-                loading: false,
+                deleteLoading: false,
                 deleteCategoryError: null,
                 deleteCategorySuccess: action.response,
                 reload: true,
@@ -86,7 +89,7 @@ export const categoryState = (state = initialState, action) => {
         case DELETE_CATEGORY_FAILED:
             return {
                 ...state,
-                loading: false,
+                deleteLoading: false,
                 deleteCategoryError: action.error.data.message,
                 deleteCategorySuccess: null,
                 reload: false,
@@ -95,14 +98,14 @@ export const categoryState = (state = initialState, action) => {
         case TRY_EDIT_CATEGORY:
             return{
                 ...state,
-                loading: true,
+                editLoading: true,
                 reload: false,
             }
         
         case EDIT_CATEGORY_SUCCESS:
             return{
                 ...state,
-                loading: false,
+                editLoading: false,
                 editCategorySuccess: action.respose,
                 editCategoryError: null,
                 reload: true
@@ -111,7 +114,7 @@ export const categoryState = (state = initialState, action) => {
         case EDIT_CATEGORY_FAILED:
             return{
                 ...state,
-                loading: false, 
+                editLoading: false, 
                 editCategorySuccess: null,
                 editCategoryError : action.error.data.message,
                 reload: false

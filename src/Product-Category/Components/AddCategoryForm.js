@@ -9,7 +9,7 @@ const AddCategoryForm = () => {
 
     const dispatch = useDispatch()
 
-    const loading = useSelector((state) => state.categoryState.loading)
+    const loading = useSelector((state) => state.categoryState.addLoading)
     const addCategoryErrorMessage = useSelector((state) => state.categoryState.addCategoryError)
 
     const { register, handleSubmit, formState: { errors } } = useForm();

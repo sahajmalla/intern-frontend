@@ -4,12 +4,15 @@ import getItemWithExpiry from '../../../utils/getLocalStorageItemsWithExpiry'
 import { showAddProductToCategoryForm } from '../redux/actions/AddProductToCategoryFormActions'
 import { GetUserPostIdCaptionsAction } from '../redux/actions/PendingProductActions'
 import AddProductToCategoryForm from './AddProductToCategoryForm'
+import { useHistory } from 'react-router-dom';
 
 
 const PendingProducts = () => {
     const userPosts = useSelector(state => state.instagramState.postsResponse)
     const isAddProdToCategoryFormShown = useSelector(state => state.AddProductToCategoryReducers.show)
+    const isSuccess = useSelector((state) => state.PostAddProdToCatState.success)
     const dispatch = useDispatch()
+    const history = useHistory()
 
 
     useEffect(() => {
@@ -48,6 +51,7 @@ const PendingProducts = () => {
 
     return (
         <>
+         {(isSuccess) && history.go(0)}
             {isAddProdToCategoryFormShown && (
                 <>
                     <AddProductToCategoryForm />

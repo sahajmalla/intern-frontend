@@ -4,12 +4,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getCategory } from '../../../Product-Category/redux/action/GetCategoryAction'
 import ShowErrorAlert from '../../../shared-components/Alert/ErrorAlert'
 import { hideAddProductToCategoryForm, postAddProductToCat } from '../redux/actions/AddProductToCategoryFormActions'
+import { getVerifiedProductsAction } from '../redux/actions/GetVerifiedProductActions'
 
 const AddProductToCategoryForm = () => {
 
     const dispatch = useDispatch()
 
-    const loading = useSelector((state) => state.categoryState.loading)
+    const loading = useSelector((state) => state.PostAddProdToCatState.loading)
+    const isSuccess = useSelector((state) => state.PostAddProdToCatState.success)
     const categories = useSelector((state => state.categoryState.category))
     const ProdIndex = useSelector(state => state.AddProductToCategoryReducers.index)
     const specificPosts = useSelector(state => state.instagramState.postsResponse)
@@ -21,6 +23,14 @@ const AddProductToCategoryForm = () => {
         dispatch(getCategory())
 
     }, []);
+
+    useEffect(() => {
+        console.log(isSuccess);
+        if (isSuccess) {
+            dispatch(hideAddProductToCategoryForm());
+        }
+
+    }, [])
 
 
     const { register, handleSubmit, formState: { errors } } = useForm({

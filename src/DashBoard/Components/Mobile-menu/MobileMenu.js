@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SellersDropdown from "../Dashboard-Sidebar/SellersDropdown";
 import SidebarProductDropdown from "../Dashboard-Sidebar/SidebarProductDropdown";
 
 
@@ -33,6 +34,10 @@ export default function MobileMenu() {
                         </Link>
                         < >
                             <SidebarProductDropdown />
+                        </>
+
+                        <>
+                            <SellersDropdown />
                         </>
 
                     </div>
